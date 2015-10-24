@@ -1,6 +1,6 @@
 {
   "name": "ghost-blog",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Letscode ghost blog",
   "main": "index.js",
   "scripts": {
