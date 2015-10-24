@@ -12,7 +12,8 @@
     "url": "https://github.com/Letscodeit/ghost-blog.git"
   },
   "dependencies": {
-    "ghost": "0.5.8"
+    "ghost": "0.6.0",
+    "ghost-s3-storage": "0.2.2"
   },
   "keywords": [
     "ghost",

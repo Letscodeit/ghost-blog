@@ -13,18 +13,31 @@ config = {
         url: 'http://blog.letscode.it',
         mail: {},
         database: {
-            client: 'sqlite3',
+            client: 'mysql',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
-            debug: false
+                host     : process.env.MYSQL_HOST,
+                user     : process.env.MYSQL_USER,
+                password : process.env.MYSQL_PASSWORD,
+                database : process.env.MYSQL_DATABASE,
+                charset  : 'utf8'
+            }
         },
 
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
             port: '2368'
+        },
+        
+        storage: {
+            active: 'ghost-s3',
+            'ghost-s3': {
+                accessKeyId: process.env.AWS_KEY_ID,
+                secretAccessKey: process.env.AWS_ACCESS_KEY,
+                bucket: process.env.AWS_BUCKET_NAME,
+                region: process.env.AWS_REGION
+            }
         },
 
         paths: {
